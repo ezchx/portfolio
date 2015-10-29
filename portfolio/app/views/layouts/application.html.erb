@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio</title>
+
+  <!-- Latest compiled and minified Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!-- Roboto fonts to use in portfolio application stylesheet -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:500,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Portfolio application stylesheet -->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <!-- Portfolio application JavaScript -->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <!-- Latest compiled and minified Unslider JavaScript -->
+  <!-- <script src="//unslider.com/unslider.min.js"></script> -->
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <!-- Header with area links -->
+  <div class="header">
+    <div class="container">
+      <nav class="nav">
+        <%= link_to 'Welcome', :welcome %>
+        <%= link_to 'Portfolio', :portfolio %>
+        <%= link_to 'Blog', 'https://medium.com/' %>
+        <%= link_to 'About', :about %>
+        <%= link_to 'Contact', :contact %>
+      </nav>
+    </div>
+  </div>
+
+	<%= yield %>
+
+  <!-- Footer with social links and copyright -->
+  <footer class="footer">
+    <a href="https://www.linkedin.com/in/richardbhorton" class="social"><img src="https://www.dropbox.com/s/ugfeiobsvsdoc91/linkedin.png?raw=1" alt="Linkedin"></a>
+    <a href="#" class="social"><img src="https://www.dropbox.com/s/yr0nr7htdvqwsex/github.png?raw=1" alt="GitHub"></a>
+    <a href="#" class="social"><img src="https://www.dropbox.com/s/5zi1b4qcoi55sfb/twitter.png?raw=1" alt="Twitter"></a>
+    <p class="copyright">&copy; Copyright 2015 | All Rights Reserved</p>
+  </footer>
+
+  <!-- JavaScript code for the slider -->
+  <script>
+    $(document).ready(function(){
+      $(function() {
+        $('.banner').unslider();
+      });
+    });
+  </script>
+
+</body>
+</html>
